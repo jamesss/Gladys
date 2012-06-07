@@ -1,6 +1,5 @@
-\documentclass[12pt]{article}
-\usepackage{geometry}
-\geometry{a4paper}
+\documentclass{article}
+\usepackage{a4, fullpage}
 \usepackage{graphicx}
 
 \begin{document}
@@ -42,35 +41,50 @@ In order to identify a problem we conducted research amongst our potential clien
 	Because the problem is clearly existent, none of the current solutions would prove satisfactory. Nevertheless it is important to study what about the current solutions is wrong.
 
 	\begin{enumerate}
-	\item \textbf{The Alarm Clock} - The patient can set a reminder on their phone or clock. \\ Problem: This does not ensure they will actually take the medication nor does it tell the patient which pill and how much to take. Emilia also had problems with remembering to set the actual alarm. More so, considering medications need to be taken at several times of the day, several alarms would need to be set and this can get very confusing.
-	\item \textbf{The Medical Professional} - The patient can hire a medical assistant to come around the house and give them their medication. \\ Problem: This is a very expensive solution and often no trained personnel will be available to take this time consuming and tedious job. Gladys also is reluctant to letting strangers in her house so often and refused this solution completely.
-	\item \textbf{The Pill Agenda} - The medication can be previously sorted by the pharmacist or doctor using the sistem in the following image. \\ Problem: This does not actually remind the patient to take the medication. It is Gladys is current system and it has happened more than once for her son to come and find the pills are untouched. This is a very serious situation because once missed, one cannot go back in time to take the prescribed dosage.
+	\item \textbf{The Alarm Clock} - The patient can set a reminder on their phone or clock. \\ \emph{Problem:} This does not ensure they will actually take the medication nor does it tell the patient which pill and how much to take. Emilia also had problems with remembering to set the actual alarm. More so, considering medications need to be taken at several times of the day, several alarms would need to be set and this can get very confusing.
+	\item \textbf{The Medical Professional} - The patient can hire a medical assistant to come around the house and give them their medication. \\ \emph{Problem:} This is a very expensive solution and often no trained personnel will be available to take this time consuming and tedious job. Gladys also is reluctant to letting strangers in her house so often and refused this solution completely.
+	\item \textbf{The Pill Agenda} - The medication can be previously sorted by the pharmacist or doctor using the system in the following image. \\ \emph{Problem:} This does not actually remind the patient to take the medication. It is Gladys is current system and it has happened more than once for her son to come and find the pills are untouched. This is a very serious situation because once missed, one cannot go back in time to take the prescribed dosage.
 	\end{enumerate}
 
 	\subsection{The Systems Approach}
-	With this in mind we used the systems approach to come up with a device and thought of the inputs: we want to feed in the medication and dosage information, check if the patient has taken it and output accordingly. \\
-	\includegraphics[width=\textwidth]{systems.png}
-	When designing a product with these specifications we had one key feature in mind: \\ \emph{The patient should not have to know anything more than they already do} \\ Ideally, they would be fed the right pills at the right time in the right dosage. We wanted a solution similar to the second one described above (the medical professional) but without the cost or the inconvenience of having someone come into your home.\medskip\\
+	With this in mind we used the systems approach to come up with a device and thought of the inputs: we want to feed in the medication and dosage information, check if the patient has taken it and output accordingly. \bigskip \\ \includegraphics[width=\textwidth]{systems.png} \bigskip \\
+	When designing a product with these specifications we had another key feature in mind: \emph{The patient should not have to learn anything new} \medskip \\ Ideally, they would be fed the right pills at the right time in the right dosage with no effort of their part. We wanted a solution similar to the second one described above (the medical professional) but without the cost or the inconvenience of having someone come into your home.
 
 	\subsection{The product}
-	Finally our product shaped up to be a coffe-machine-like pill dispenser. These are the first key features:
+	Finally our product shaped up to be a coffee-machine-like pill dispenser. These are the first key features:
 	\begin{itemize}
 	\item Simplicity: no buttons or other interaction methods.
-	\item Safty: the pharmacist sells pre-packed tubes of medication, with a chip that the machine can read and know how much and when to dispense. No one else has access to the dosage or content of the tubes.
+	\item Safety: the pharmacist sells pre-packed tubes of medication, with a chip that the machine can read and know how much and when to dispense. No one else has access to the dosage or content of the tubes.
 	\item Reliability: The machine notifies the user until it detects that the dispensed medicine is no longer in the tray. After a certain delay it notifies the nominated responsible person. The machine also notifies about low supplies of pills.
 	\item Low cost: Once purchased the patient only pays for the medication. The containers (tubes) can be reprogrammed.
 	\end{itemize}
-	With this in mind we sketched the physical product. These are a few attempts that focus on reduced size and pleasant aspect. \\
-	\includegraphics[width=0.85\textwidth]{product.png}
+	With this in mind we sketched the physical product. These are a few attempts that focus on reduced size and pleasant aspect.
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{product.png}
+	\end{figure}
 
-	\subsubsection*{How it works in detail}
-	Description \\
-	Programming the tubes - considering intermediate users \\
-	Notifying the patient - from the bracelet to the telephone (working with and for the user)
+	\subsubsection*{How it works}
+	\begin{enumerate}
+	\item The patient takes his prescription to a pharmacy where a trained person (our intermediate user) pre-packs the medicine into smart tubes. These tubes have an easily reprogrammable chip on the cap.
+	\item Next the tubes are put into the machine by either the patient of the person delivering them. This is a straight forward procedure: lift the lid of the machine, place the tubes in the empty slots and close the lid.
+	\item The machine reads the tubes and starts dispensing accordingly.
+	\item When medicine has been dispensed the machine telephones the patient. Even if they pick up the machine will keep calling at intervals until the medicine is gone from its tray. \\ Initially, the idea was to ask the patient to wear a bracelet or necklace that would notify them by vibrating but Gladys was reluctant to the idea of having to wear anything. Therefore we chose to notify them by an already familiar mean which people are comfortable with: the telephone.
+	\item After a certain while, if the medicine has not been taken, the machine telephones a nominated person (family or doctor). This phone call is only done once or until someone picks up.
+	\item The machine notifies the nominated person in the same way when it detects a low supply of medicine.
+	\end{enumerate}
 
 	\subsection{Quantified self}
-	\subsection{Value and Technical Feasibility}
-
+	Another important feature of our device is that it allows the patient to remember to take their pills themselves by delaying the reminder and keeping track of how well they remember to do so. \medskip \\
+	Every time a patient forgets the delay interval is decreased down to a limit of 1 minute.\\
+	Every time the patient remembers the delay is increased up to a limit of 15 minutes.\medskip \\
+	The aim is to raise awareness and train the patient's memory. We believe these remembering patterns are an important and useful insight to keep track of. Furthermore it gives the patient a certain independence which we found, by talking to our potential clients, is very important after a certain age. People resent the idea of being dependent on machines or other people. This system allows selfsufficiency whilst helping to improve the patient's discipline and memory.
+	
 \section{Summary}
+	\begin{itemize}	
+	\item Older people have trouble remembering which medication to take, when, and how often (if at all!).
+	\item Multiple solutions already exist, but they all require some degree of awareness, good memory or intervention.
+	\item The system we have designed aims to obviate the need for memory and intervention, offering value and reliability.
+	\end{itemize}
 
 \end{document}
